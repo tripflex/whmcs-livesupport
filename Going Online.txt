@@ -1,0 +1,53 @@
+-----------------------------------------------------------------------------------
+    WHMCS Addon Live Support - Provides a way for you to instantly communicate
+    with your customers.
+    Copyright (C) 2010-2012 WHMCS Addon (www.whmcsaddon.com)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-----------------------------------------------------------------------------------
+
+Going Online
+--------------------
+
+Before the addon will let you go online you should verify that the proper settings are set throughout WHMCS and the addon.
+
+1. Check that you have your departments set to "viewable". This will let the system know that you want the department of choice to be selectable by your clients. You can do this by going to the "Live Chat Settings" page.
+
+To find this page in your WHMCS Admin Area.
+-> Hover/Click on "Addons".
+-> Click "Live Chat Settings"
+
+Now scroll down the page and till you find "Department Configurations". Once there you can select the departments that can be viewable by the end user. While there also select your primary department that you want users to default to. And click save. From the sounds of things you have already done this.
+
+2. Check that your operators can use the specific departments in WHMCS.
+
+To do this go to the administrators settings page in the setup menu.
+-> Hover/Click on "Setup".
+-> Click "Administrators".
+
+Edit yourself or another administrator that is having difficulty going online.
+
+Verify that the administrator has the departments assigned under "Assigned Departments". If not assign the administrator the departments of choice. Once Assigned hit save.
+
+3. Lastly set yourself online.
+
+This can be done through the "Live Chat" addon module page.
+-> Hover/Click on "Addons".
+-> Click "Live Chat"
+
+Once there you can click the offline/online button on the bottom right to go online.
+
+If you cannot see this button then it is suggested you upgrade your browser. The admin area is best viewed in Firefox, Chrome, and Safari. Internet Explorer may have issues displaying such a button do to fixed positioning.
+
+You should now be online. After going online you should now be able to chat with your visitors.

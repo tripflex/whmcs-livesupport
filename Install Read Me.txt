@@ -1,0 +1,67 @@
+-----------------------------------------------------------------------------------
+    WHMCS Addon Live Support - Provides a way for you to instantly communicate
+    with your customers.
+    Copyright (C) 2010-2012 WHMCS Addon (www.whmcsaddon.com)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-----------------------------------------------------------------------------------
+
+HOW TO INSTALL/UPGRADE!
+
+	* i. is for fresh installs
+	* ii. is for upgrades
+
+1. Upload all the files in this zip to your whmcs directory.
+
+2. Run the database install file located at:
+i. http://YOUR-WHMCS-LOCATION-HERE/chat-install/install.php
+ii. http://YOUR-WHMCS-LOCATION-HERE/chat-install/upgrade.1.php
+
+Alternatively you can manually add the sql into your database.
+
+3. Delete the chat install folder (chat-install) after the database setup is complete.
+
+4. Go to the chat settings page and set your desired settings as well as your license key.
+
+-> If you do not have a license key you can aquire one from http://whmcsaddon.com
+* The license key is required for this software to work.
+
+Your chat settings page can be found here:
+http://YOUR-WHMCS-LOCATION-HERE/admin/addonmodules.php?module=live_chat_settings
+
+5. Once you have your disered settings setup you may edit your templates to include the live chat javascript.
+
+* jQuery must be installed on your site!
+** the jQuery include on your site template will look something like this:
+	<script type="text/javascript" src="../includes/jscript/jquery.js"></script>
+	Any javascript include will be placed after jQuery has been included!
+
+ -- Main/WHMCS Site --
+
+After the line that includes jQuery to the site (for WHMCS templates it is recommended to include it in the header.tpl file "/templates/YOUR-TEMPLATE-HERE/header.tpl"):
+<script type="text/javascript" src="http://YOUR-WHMCS-LOCATION-HERE/includes/jscript/livehelp.js.php"></script>
+
+Put this where you want your icons to appear in your layout:
+<span class="livechat"></span>
+
+
+!IMPORTANT THIS HAS BEEN UPDATED!
+ -- Admin Area Template --
+    -> This is an optional addon which will give you the ability to view live chat requests on any page in the  WHMCS admin panel.
+
+
+In your admin template edit header.tpl ("/admin/templates/YOUR-TEMPLATE-HERE/header.tpl")
+
+Insert the following line after jQuery is included
+<script type="text/javascript" src="../includes/jscript/adminchat-notify.js.php?module={$smarty.get.module}"></script>

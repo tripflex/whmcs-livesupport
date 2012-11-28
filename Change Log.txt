@@ -1,0 +1,59 @@
+-----------------------------------------------------------------------------------
+    WHMCS Addon Live Support - Provides a way for you to instantly communicate
+    with your customers.
+    Copyright (C) 2010-2012 WHMCS Addon (www.whmcsaddon.com)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-----------------------------------------------------------------------------------
+
+Change Log
+* Live Support Addon
+=================
+This document can be used to help perform upgrades.
+
+Version 1.62 GPL
++ Removed License Check
++ Converted license agreement to GPL
+
+Version 1.62
+------------
++ Reduced license check frequency (performance booster)
++ Adjusted /templates/chat/TEMPLATE/chatwindow.tpl
+--Replaced:
+=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=--=-
+{literal}
+<script type="text/javascript">
+var playSound = 1;
+$(document).ready(function() {
+	var currentSession = "{/literal}{$chatSessionID}{literal}";
+	$.ajaxSetup({cache: false});
+	$.ajax({ url:"includes/jscript/chatwindow.js.php?currentSession="+currentSession{/literal}{if $secret == "true"}+"&secretjoin=true"{/if}{literal}, dataType:"script", type:"GET", success: function () {jsLoaded()}});
+
+});
+=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=--=-
+--With:
+=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=--=-
+{literal}
+<script type="text/javascript">
+var playSound = 1;
+$(document).ready(function() {
+	var currentSession = "{/literal}{$chatSessionID}{literal}";
+	$.ajaxSetup({cache: false});
+});
+</script>
+{/literal}
+{literal}<script type="text/javascript" src="includes/jscript/chatwindow.js.php?currentSession={/literal}{$chatSessionID}{literal}{/literal}{if $secret == "true"}+&secretjoin=true{/if}{literal}"></script>{/literal}
+{literal}<script type="text/javascript">
+jsLoaded();
+=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=--=-
